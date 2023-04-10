@@ -1,0 +1,57 @@
+@import "./scss/common";
+
+.find-form {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  &-input {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid silver;
+    margin: 20px 0;
+  }
+  &-btn {
+    padding: 10px;
+    border: 2px solid transparent;
+    white-space:nowrap;
+    background: silver;
+    font-weight: bold;
+  }
+}
+
+.sheet {
+  display: flex;
+}
+
+.block-title {
+  margin-bottom: 10px;
+}
+
+.qst {
+  margin-right: 20px;
+  width: 50%;
+  &-list {}
+  &-item {
+    padding: 10px;
+    border: 2px solid transparent;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      background: silver !important;
+    }
+    &:nth-child(odd) {
+      background: rgb(234, 234, 234);
+    }
+    &-active {
+      border-color: silver;
+      text-decoration: underline;
+      background-color: silver !important;
+    }
+  }
+
+}
+
+.answ {
+  width: 50%;
+  &-block {}
+}
