@@ -27,3 +27,18 @@ export const createMarkup = (content) => {
   const data = {__html: content};
   return data;
 }
+
+// export const convertUrlToLink = (str) => {
+//   const re = /\*([^)]+)\*/g;
+//   const matchValue = str.match(re).map(item => item.slice(1, -1));
+//   const html = str.replace(re, '*');
+//   console.log(html);
+// }
+
+export const convertUrlToLink = (str) => {
+  let urlRegex = /\*(https?:\/\/[^\s]+)\*/g;
+  let replacedText = str.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
+
+  return replacedText;
+}
+// \(\**.*\*\)

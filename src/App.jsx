@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {highLight, convertNewLinesToBr, createMarkup} from "./functions";
+import {highLight, convertNewLinesToBr, createMarkup, convertUrlToLink} from "./functions";
 import data from "./data";
 
 
@@ -20,7 +20,7 @@ function App() {
 
   const getAnsw = (id) => {
     const data = dataList.find(item => item.id === id);
-    return data ? highLight({filter: search, str: convertNewLinesToBr(data.answ)}) : '';
+    return data ? highLight({filter: search, str:  convertUrlToLink(convertNewLinesToBr(data.answ))}) : '';
   }
 
   useEffect(() => {
@@ -28,7 +28,6 @@ function App() {
     if (!search) {
       newDataList = [...data];
     }
-
     setDataList(newDataList);
   }, [search]);
 
@@ -56,9 +55,7 @@ function App() {
         
         <div className="answ">
           <h2 className="block-title">Відповіді</h2>
-          <p className="answ-block" dangerouslySetInnerHTML={createMarkup(getAnsw(currentQstId))}>
-            {/* { getAnsw(currentQstId) } */}
-          </p>
+          <p className="answ-block" dangerouslySetInnerHTML={createMarkup(getAnsw(currentQstId))}></p>
         </div>
       </div>
       
