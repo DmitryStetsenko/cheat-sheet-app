@@ -43,9 +43,9 @@
       background: rgb(234, 234, 234);
     }
     &-active {
-      border-color: silver;
+      border-color: green;
       text-decoration: underline;
-      background-color: silver !important;
+      background-color: #a8ffc4 !important;
     }
   }
 
@@ -53,6 +53,9 @@
 
 .answ {
   width: 50%;
+  &-title {
+    margin-bottom: 10px;
+  }
   &-block {
     position: sticky;
     top: 0;

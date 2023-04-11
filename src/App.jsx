@@ -20,7 +20,10 @@ function App() {
 
   const getAnsw = (id) => {
     const data = dataList.find(item => item.id === id);
-    return data ? highLight({filter: search, str:  convertUrlToLink(convertNewLinesToBr(data.answ))}) : '';
+    const answText = convertUrlToLink(convertNewLinesToBr(data.answ));
+    const qst = data.qst;
+    const answ = `<h3 class="answ-title">${qst}</h3>${answText}`
+    return data ? highLight({filter: search, str: answ}) : '';
   }
 
   useEffect(() => {
