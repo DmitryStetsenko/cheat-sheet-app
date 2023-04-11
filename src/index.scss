@@ -53,7 +53,10 @@
 
 .answ {
   width: 50%;
-  &-block {}
+  &-block {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .highlight {

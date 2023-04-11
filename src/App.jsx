@@ -24,7 +24,7 @@ function App() {
   }
 
   useEffect(() => {
-    let newDataList = data.filter(item => item.answ.toLowerCase().includes(search.toLowerCase()));
+    let newDataList = data.filter(item => item.answ.toLowerCase().includes(search.toLowerCase()) || item.qst.toLowerCase().includes(search.toLowerCase()));
     if (!search) {
       newDataList = [...data];
     }
