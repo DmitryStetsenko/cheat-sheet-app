@@ -14,8 +14,8 @@ function App() {
               key={ item.id } 
               className={`${'qst-item'} ${item.id === currentQstId ? 'qst-item-active' : ''}`}
               onClick={() => setCurrentQstId(item.id) }
+              dangerouslySetInnerHTML={createMarkup(`${item.id}. ${highLight({filter:search , str: item.qst})}`)}
             >
-              { `${item.id}. ${item.qst}` }
             </li>);
 
   const getAnsw = (id) => {
