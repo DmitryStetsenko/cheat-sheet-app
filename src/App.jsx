@@ -20,6 +20,11 @@ function App() {
 
   const getAnsw = (id) => {
     const data = dataList.find(item => item.id === id);
+
+    if (!data) {
+      return '';
+    }
+
     const answText = convertUrlToLink(convertNewLinesToBr(data.answ));
     const qst = data.qst;
     const answ = `<h3 class="answ-title">${qst}</h3>${answText}`
